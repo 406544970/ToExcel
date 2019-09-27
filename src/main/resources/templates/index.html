@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试页面</title>
+</head>
+<body>
+    测试页面
+    <button id="btnXlsExport1">无序号</button>
+    <button id="btnXlsExport2">有序号</button>
+    <script src="${request.contextPath}/static/jquery-3.4.1.js"></script>
+    <script>
+        $("#btnXlsExport1").on("click", function () {
+            exportXLS(false);
+        });
+        $("#btnXlsExport2").on("click", function () {
+            exportXLS(true);
+        });
+        function exportXLS(showOrderNumber) {
+            window.location.href="/exportExcel?showOrderNumber=" + showOrderNumber;
+        }
+    </script>
+</body>
+</html>
